@@ -179,6 +179,7 @@ Build-Depends: bc, rsync, kmod, cpio, bison, flex | flex:native $extra_build_dep
 Homepage: https://www.kernel.org/
 
 Package: $packagename-$version
+Provides: linux-rockchip-image
 Architecture: $debarch
 Description: Linux kernel, version $version
  This package contains the Linux kernel, modules and corresponding other
@@ -186,7 +187,7 @@ Description: Linux kernel, version $version
 
 Package: linux-libc-dev
 Section: devel
-Provides: linux-kernel-headers
+Provides: linux-rockchip-headers
 Architecture: $debarch
 Description: Linux support headers for userspace development
  This package provides userspaces headers from the Linux kernel.  These headers
@@ -211,6 +212,7 @@ cat <<EOF >> debian/control
 
 Package: linux-image-$version-dbg
 Section: debug
+Provides: linux-rockchip-image-dbg
 Architecture: $debarch
 Description: Linux kernel debugging symbols for $version
  This package will come in handy if you need to debug the kernel. It provides
